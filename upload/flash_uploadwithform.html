@@ -1,0 +1,42 @@
+﻿<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+	
+</head>
+<body>
+
+                
+
+
+<form id="myform" name="myform">
+<div id="MultiPowUpload_holder">
+<strong>You need at least 10 version of Flash player!</strong>
+<a href="http://www.adobe.com/go/getflashplayer">&nbsp;<img border="0" src="images/get_flash_player.gif" alt="Get Adobe Flash player" /></a>
+</div>	
+<!-- SWFObject home page: http://code.google.com/p/swfobject/
+You can replace src value with the http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js (Most users has such file cached)
+ -->
+<script type="text/javascript" src="Extra/swfobject.js"></script>
+<script type="text/javascript">
+	var params = {  
+		BGColor: "#FFFFFF"
+	};
+	
+	var attributes = {  
+		id: "MultiPowUpload",  
+		name: "MultiPowUpload"
+	};
+	
+	//MultiPowUpload partameters goes here
+	var flashvars = {		
+	  "serialNumber": "put your serial number here",
+	  "uploadUrl": "FileProcessingScripts/PHP/uploadfiles.php",
+	  "formName": "myform",
+	  "useExternalInterface": "true"
+	};
+	//Default MultiPowUpload should have minimum width=400 and minimum height=180
+	swfobject.embedSWF("ElementITMultiPowUpload.swf", "MultiPowUpload_holder", "50%", "40%", "10.0.0", "Extra/expressInstall.swf", flashvars, params, attributes);
+</script>
+</form>
+</body>
+</html>

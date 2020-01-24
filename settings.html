@@ -1,0 +1,449 @@
+<html>
+    <head>
+         <meta charset="UTF-8">
+        <title>Настройки страницы</title>
+        <link rel="shortcut icon" href="img/4.ico" type="image/x-icon"/>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">     
+        <link href="bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="Stylesheet" />
+        <link href="bootstrap-3.3.2-dist/css/bootstrap-theme.min.css" rel="Stylesheet" /> 
+        <script src="bootstrap-3.3.2-dist/jquery-3.0.0.min.js"></script>
+        <script type='text/javascript' src="bootstrap-3.3.2-dist/js/bootstrap.min.js"></script> 
+        <script>
+            function set_cookie ( name, value, exp_y, exp_m, exp_d, path, domain, secure )
+                {
+                  var cookie_string = name + "=" + escape ( value );
+
+                  if ( exp_y )
+                  {
+                    var expires = new Date ( exp_y, exp_m, exp_d );
+                    cookie_string += "; expires=" + expires.toGMTString();
+                  }
+
+                  if ( path )
+                        cookie_string += "; path=" + escape ( path );
+
+                  if ( domain )
+                        cookie_string += "; domain=" + escape ( domain );
+
+                  if ( secure )
+                        cookie_string += "; secure";
+
+                  document.cookie = cookie_string;
+                }
+            function delete_cookie ( cookie_name )
+                {
+                  var cookie_date = new Date ( );  // Текущая дата и время
+                  cookie_date.setTime ( cookie_date.getTime() - 1 );
+                  document.cookie = cookie_name += "=; expires=" + cookie_date.toGMTString();
+                }
+            
+            
+            var dat=new Date();
+           function checkForm()
+                {               
+                    if(document.RegForm.bg_one.value != ""){set_cookie ( "bg_one", document.RegForm.bg_one.value , 2052, 01, 15 );}
+                    if(document.RegForm.bg.value != ""){  set_cookie ( "bg", document.RegForm.bg.value , 2052, 01, 15 );}
+                    if(document.RegForm.bg_st.value != ""){set_cookie ( "bg_st", document.RegForm.bg_st.value , 2052, 01, 15 );}
+                    if(document.RegForm.color_one.value != ""){ set_cookie ( "color_one", document.RegForm.color_one.value , 2052, 01, 15 );}
+                    if(document.RegForm.color_all.value != ""){set_cookie ( "color_all", document.RegForm.color_all.value , 2052, 01, 15 );}
+                    if(document.RegForm.hower.value != ""){set_cookie ( "hower", document.RegForm.hower.value , 2052, 01, 15 );}
+                    if(document.RegForm.select.value != ""){ set_cookie ( "select", document.RegForm.select.value , 2052, 01, 15 );}
+                    if(document.RegForm.select1.value != ""){ set_cookie ( "select1", document.RegForm.select1.value , 2052, 01, 15 );}   
+                    if(document.RegForm.color_border.value != ""){ set_cookie ( "color_border", document.RegForm.color_border.value , 2052, 01, 15 );}
+                     if(document.RegForm.fon.value != ""){ set_cookie ( "fon", document.RegForm.fon.value , 2052, 01, 15 );} 
+                    
+                  location.reload();
+                    document.location.href = "#rem";
+                }
+            
+                function checkForm2()
+                {                 
+                          delete_cookie("bg_one");
+                          delete_cookie( "bg");
+                          delete_cookie( "bg_st");
+                          delete_cookie( "color_one");
+                          delete_cookie( "color_all");
+                          delete_cookie( "select");
+                          delete_cookie( "select1");
+                          delete_cookie( "hower");
+                          delete_cookie( "color_border");
+                          delete_cookie( "fon");
+                   
+                    location.reload();
+                    document.location.href = "#rem";
+                }
+               function checkForm3()
+                {                 
+                      set_cookie ( "bg_one", '#8BCFD8' , 2052, 01, 15 );
+                      set_cookie ( "bg", '#FFD98C', 2052, 01, 15 );
+                      set_cookie ( "bg_st", '#BDE8EE' , 2052, 01, 15 );
+                      set_cookie ( "color_one", '#white' , 2052, 01, 15 );
+                      set_cookie ( "color_all", '#1C1C1C' , 2052, 01, 15 );
+                      set_cookie ( "hower", '#81F9A6' , 2052, 01, 15 );
+                      set_cookie ( "select", '16px', 2052, 01, 15 );
+                      set_cookie ( "select1", 'TimesNewRoman' , 2052, 01, 15 );  
+                      set_cookie ( "color_border", 'white' , 2052, 01, 15 );
+                      set_cookie ( "fon", 'url(\'img/b3.jpg\')' , 2052, 01, 15 );                     
+                  location.reload();
+                    document.location.href = "#rem";
+                }
+            
+            
+             
+        </script>
+        <style>
+            body{
+                padding: 40px;                
+            }
+            p{               
+                padding-left: 20px;
+            }
+             .colorButton {
+                 display:  inline-block;
+                width:100px; 
+                margin-left:11px; 
+                margin-bottom: 11px;
+                height:100px; 
+                float:left;
+
+                border-style: solid;
+                border-width: 1px;
+                border-radius: 5px;               
+                
+            }
+            .colorButtonInput{
+                border: 2px solid  black;
+                border-width: 1px;
+                border-radius: 5px; 
+                height: 50px;
+                color:  red;
+            }
+        </style>
+    </head>
+    <body>        
+        <div class="container-fluid">
+            <div class="row">
+              <h2>Готоыве настройки: </h2>
+             <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="thumbnail" style="background: #EAEAEA;">
+                  <img src="img/Default_1.jpg">
+                  <div class="caption">
+                    <h4>По умолчанию 1</h4>
+                     <ul>
+                      <li>Фон:   серый</li>
+                      <li>Шрифт: 18рх</li>
+                    </ul>
+                    <p><a onClick="checkForm2();" href="#" class="btn btn-primary" role="button">Выбрать</a></p>
+                  </div>
+                </div>
+              </div>
+             <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="thumbnail" style="background: #EAEAEA;">
+                  <img src="img/Default_2.jpg">
+                  <div class="caption">
+                    <h4>По умолчанию 2</h4>
+                     <ul>
+                      <li>Фон:   серый c рисунком</li>
+                      <li>Шрифт: 16рх</li>
+                    </ul>
+                    <p><a onClick="checkForm3();" href="#" class="btn btn-primary" role="button">Выбрать</a></p>
+                  </div>
+                </div>
+             </div>             
+            </div>
+        </div>
+        <form action="" method="POST" name="RegForm">
+        <h2>Задайте свои параметры таблицы</h2> 
+
+            <input id="inp_color" class="colorButtonInput" type="text" value="" style="width: 160px; align-content: center; font-size: 18px;" />
+            <br/>
+            <br/>
+            <table  align="center" width="100%" >
+                <tr>
+                    <td style="vertical-align: top; ">
+                        <table align="center" width="100%">                      
+                            <tr style="border-top-style:  double; border-left-style:  double; border-right-style:  double; ">
+                                <td width="60%" >
+                                    <h4>Фон 1-ой строки:</h4>
+                                </td>
+                                <td><input style="width: 100px" type="text" id='bg_one' /></td>
+                            </tr>
+                            <tr style="border-left-style:  double; border-right-style:  double;">
+                                <td width="60%">
+                                    <h4>Фон основной таблицы:</h4>
+                                </td>
+                                <td><input style="width: 100px" type="text" id='bg' /></td>
+                            </tr>
+                             <tr style="border-left-style:  double; border-right-style:  double; border-bottom-style:  double; ">
+                                <td width="60%">
+                                    <h4>Фон первого столбца:</h4>
+                                </td>
+                                <td><input style="width: 100px" type="text" id='bg_st' /></td>
+                            </tr>
+                              <tr style="border-top-style: double; border-left-style:double; border-right-style: double; ">
+                                <td width="60%">
+                                    <h4>Цвет текста 1-ой строки:</h4>
+                                </td>
+                                <td><input style="width: 100px" type="text" id='color_one' /></td>
+                            </tr>
+                              <tr style="border-left-style: double; border-right-style: double;">
+                                <td width="60%">
+                                    <h4>Цвет текста основной таблицы:</h4>
+                                </td>
+                                <td><input style="width: 100px" type="text" id='color_all' /></td>
+                            </tr>
+                              <tr style="border-left-style: double; border-right-style: double;">
+                                <td width="60%">
+                                    <h4>Цвет границ таблицы:</h4>
+                                </td>
+                                <td><input style="width: 100px" type="text" id='color_border' /></td>
+                            </tr>
+                             <tr style="border-left-style: double; border-right-style: double; border-bottom-style: double; ">
+                                <td width="60%">
+                                    <h4>Цвет выдиляемой строки:</h4>
+                                </td>
+                                <td><input style="width: 100px" type="text" id='hower' /></td>
+                            </tr>
+                             <tr style="border-top-style: double; border-left-style:double; border-right-style: double; ">
+                                <td>
+                                    <h4 width="60%">Фон страницы</h4>
+                                </td>
+                                <td>
+                                    <select name="fon" >
+                                      <option selected value=""></option>
+                                       <option  value="url('img/b.jpg')">1</option>
+                                        <option value="url(img/b2.jpg)">2</option>
+                                        <option value="url(img/b3.jpg)">3</option>
+                                        <option value="url(img/b4.jpg)">4</option>
+                                        <option value="url(img/b5.jpg)">5</option>
+                                        <option value="url(img/b6.jpg)">6</option>
+                                        <option value="url(img/b7.jpg)">7</option>
+                                        <option value="url(img/b8.jpg)">8</option>
+                                        <option value="url(img/b9.jpg)">9</option>
+                                        <option value="url(img/b10.jpg)">10</option>
+                                        <option value="url(img/b11.jpg)">11</option>
+                                        <option value="White">Белый</option>
+                                        <option value="Black">Черный</option>
+                                        <option value="Gray">Серый</option>
+                                        <option value="Yellow">Желтый</option>
+                                        <option value="Blue">Синий</option>
+                                        <option value="GreenYellow">GreenYellow</option>
+                                        <option value="Turquoise">Turquoise</option>
+                                        <option value="DarkOrchid">DarkOrchid</option>
+                                        <option value="Indigo">Indigo</option>
+                                        <option value="Orange">Orange</option>
+                                        <option value="Lime">Lime</option>
+                                    </select>
+                                </td>
+                            </tr>
+                              <tr style="border-top-style: double; border-left-style:double; border-right-style: double; ">
+                                <td>
+                                    <h4 width="60%">Размер шрифтов</h4>
+                                </td>
+                                <td>
+                                    <select name="select" >
+                                      <option selected value=""></option>
+                                       <option  value="10px">10</option>
+                                        <option value="12">12</option>
+                                        <option value="14px">14</option>
+                                        <option value="16px">16</option>
+                                        <option value="18px">18</option>
+                                        <option value="20px">20</option>
+                                         <option value="24px">24</option>
+                                    </select>
+                                </td>
+                            </tr>
+                                  <tr style="border-left-style: double; border-right-style: double; border-bottom-style: double; ">
+                                <td>
+                                    <h4 width="60%">Шрифт</h4>
+                                </td>
+                                <td>
+                                    <select name="select1">
+                                      <option selected value=""></option>
+                                       <option  value="Times New Roman">Times New Roman</option>
+                                        <option value="cursive">cursive</option>
+                                        <option value="Arial">Arial</option>                                      
+                                    </select>
+                                </td>
+                            </tr>
+                                <tr >
+                                <td colspan="2">
+                                  <br/>
+                                   <button type="button" onClick="checkForm();" class="btn btn-success btn-lg" >Принять данные</button>
+                                </td>                                
+                            </tr>                        
+                            <!--
+                             <tr >
+                                <td colspan="2">
+                                  <br/>
+                                   <button type="button" onClick="checkForm2();" class="btn btn-primary btn-lg" >По умолчанию 1</button>
+                                </td>                                
+                            </tr>
+                            <tr >
+                                <td colspan="2">
+                                  <br/>
+                                   <button type="button" onClick="checkForm3();" class="btn btn-primary btn-lg" >По умолчанию 2</button>
+                                </td>                                
+                            </tr>
+                             -->
+                        </table>
+                    </td>
+                    <td width="80%" height="100%" style="vertical-align: top;">
+                        <div id="colorContainer" style="width: 100%; margin-top: 20px; text-align: center;">
+                            <div name="div_color" style="background-color:black;" class="colorButton"></div>                            
+                            <div name="div_color" style="background-color:white;" class="colorButton"></div>                            
+                            <div name="div_color" style="background-color: #7f7f7f;" class="colorButton"></div>                            
+                            <div name="div_color" style="background-color: #c3c3c3;" class="colorButton"></div>                            
+                            <div name="div_color" style="background-color: #880015;" class="colorButton"></div> 
+                            <div name="div_color" style="background-color: #b97a57;" class="colorButton"></div> 
+                            <div name="div_color" style="background-color: #ed1c24;" class="colorButton"></div>                            
+                            <div name="div_color" style="background-color: #ffaec9;" class="colorButton"></div> 
+                            <div name="div_color" style="background-color: #ff7f27;" class="colorButton"></div> 
+                            <div name="div_color" style="background-color: #ffc90e;" class="colorButton"></div> 
+                            <div name="div_color" style="background-color: #fff200;" class="colorButton"></div> 
+                            <div name="div_color" style="background-color: #efe4b0;" class="colorButton"></div> 
+                            <div name="div_color" style="background-color: #22b14c;" class="colorButton"></div>                             
+                            <div name="div_color" style="background-color: #b5e61d;" class="colorButton"></div> 
+                            <div name="div_color" style="background-color: #00a2e8;" class="colorButton"></div> 
+                            <div name="div_color" style="background-color: #99d9ea;" class="colorButton"></div> 
+                            <div name="div_color" style="background-color: #3f48cc;" class="colorButton"></div> 
+                            <div name="div_color" style="background-color: #7092be;" class="colorButton"></div> 
+                            <div name="div_color" style="background-color: #a349a4;" class="colorButton"></div> 
+                            <div name="div_color" style="background-color: #c8bfe7;" class="colorButton"></div>                           
+                            
+                        </div>
+                       
+                    </td>
+                </tr>
+            </table>
+           <script>
+             $("div[name=div_color]").click(function(){
+                 $("#inp_color").val($(this).css("background-color"));
+              });              
+               
+            </script>
+       
+        </form>        
+        <h3>Примеры фона страницы</h3>
+        <div style="margin-top: 20px; margin-bottom: 20px;">
+            <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel" style="margin-top: 20px;">
+                <!-- Carousel indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                    <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                    <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+                    <li data-target="#myCarousel" data-slide-to="4" class=""></li>
+                    <li data-target="#myCarousel" data-slide-to="5" class=""></li>
+                    <li data-target="#myCarousel" data-slide-to="6" class=""></li>
+                    <li data-target="#myCarousel" data-slide-to="7" class=""></li>
+                    <li data-target="#myCarousel" data-slide-to="8" class=""></li>
+                    <li data-target="#myCarousel" data-slide-to="9" class=""></li>
+                    <li data-target="#myCarousel" data-slide-to="10" class=""></li>
+                </ol>
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="item active" style="  background: #333; text-align: center; height: 400px !important;">
+                        <div style="align-content: center;">
+                            <img src="img/b.jpg" width="80%" />
+                            <div class="carousel-caption">
+                                <h3 style="color: red;">1</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" style="align-content: center; background: #333; text-align: center; height: 400px !important;">
+                        <div style="align-content: center;">
+                            <img src="img/b2.jpg" width="80%" />
+                            <div class="carousel-caption">
+                                <h3 style="color: red;">2</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" style="align-content: center; background: #333; text-align: center; height: 400px !important;">
+                        <div style="align-content: center;">
+                            <img src="img/b3.jpg" width="80%" />
+                            <div class="carousel-caption">
+                                <h3 style="color: red;">3</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" style="align-content: center; background: #333; text-align: center; height: 400px !important;">
+                        <div style="align-content: center;">
+                            <img src="img/b4.jpg" width="80%" />
+                            <div class="carousel-caption">
+                                <h3 style="color: red;">4</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" style="align-content: center; background: #333; text-align: center; height: 400px !important;">
+                        <div style="align-content: center;">
+                            <img src="img/b5.jpg" width="80%" />
+                            <div class="carousel-caption">
+                                <h3 style="color: red;">5</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" style="align-content: center; background: #333; text-align: center; height: 400px !important;">
+                        <div style="align-content: center;">
+                            <img src="img/b6.jpg" width="80%" />
+                            <div class="carousel-caption">
+                                <h3 style="color: red;">6</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" style="align-content: center; background: #333; text-align: center; height: 400px !important;">
+                        <div style="align-content: center;">
+                            <img src="img/b7.jpg" width="80%" />
+                            <div class="carousel-caption">
+                                <h3 style="color: red;">7</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" style="align-content: center; background: #333; text-align: center; height: 400px !important;">
+                        <div style="align-content: center;">
+                            <img src="img/b8.jpg" width="80%" />
+                            <div class="carousel-caption">
+                                <h3 style="color: red;">8</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" style="align-content: center; background: #333; text-align: center; height: 400px !important;">
+                        <div style="align-content: center;">
+                            <img src="img/b9.jpg" width="80%" />
+                            <div class="carousel-caption">
+                                <h3 style="color: red;">9</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" style="align-content: center; background: #333; text-align: center; height: 400px !important;">
+                        <div style="align-content: center;">
+                            <img src="img/b10.jpg" width="80%" />
+                            <div class="carousel-caption">
+                                <h3 style="color: red;">10</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" style="align-content: center; background: #333; text-align: center; height: 400px !important;">
+                        <div style="align-content: center;">
+                            <img src="img/b11.jpg" width="80%" />
+                            <div class="carousel-caption">
+                                <h3 style="color: red;">11</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel nav -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+        <br />
+        <iframe width="100%" id="rem" height="600px" src="index.php">
+        </iframe> 
+    </body>
+</html>
